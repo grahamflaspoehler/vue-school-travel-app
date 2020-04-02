@@ -2,12 +2,7 @@
   <div>
     <h1>Welcome {{ user }}</h1>
     <div class="invoices">
-      <router-link :to="{
-        name: 'TheInvoices',
-        
-      }">
-        Invoices
-      </router-link>
+      <router-link :to="{ name: 'TheInvoices' }">Invoices</router-link>
     </div>
     <button @click="logout">Logout</button>
   </div>
