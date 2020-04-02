@@ -19,6 +19,9 @@
           {{ destination.name }}
         </router-link>
       </li>
+      <li class="links">
+        <router-link :to="{ name: 'TheUser' }">Dashboard</router-link>
+      </li>
     </ul>
   </nav>
 </template>
