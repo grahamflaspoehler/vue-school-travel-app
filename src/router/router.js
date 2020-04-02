@@ -43,6 +43,12 @@ const routes = [
     }
   },
   {
+    path: "/invoices",
+    name: "TheInvoices",
+    component: () => import(/* webpackChunkName: TheInvoices */ "@/views/TheInvoices.vue"),
+    meta: { requiresAuth: true }
+  },
+  {
     path: "/user",
     name: "TheUser",
     component: () => import(/* webpackChunkName: User */ "@/views/TheUser.vue"),
@@ -89,7 +95,10 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
     if (!store.user) {
-      next({ name: "TheLogin" });
+      next({
+        name: "TheLogin",
+        query: { redirect: to.fullPath }
+      });
     } else {
       next();
     }

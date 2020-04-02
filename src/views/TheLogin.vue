@@ -25,6 +25,8 @@ export default {
       //Authenticate
       store.user = this.username;
       this.$router.push("/user");
+      const redirectPath = this.$route.query.redirect || "/";
+      this.$router.push(redirectPath);
     },
     logout() {
       store.user = null;
