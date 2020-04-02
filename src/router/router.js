@@ -8,11 +8,13 @@ const routes = [
   {
     path: "/",
     name: "Home",
+    props: true,
     component: Home
   },
   {
-    path: "/details/:slug",
+    path: "/details/:slug ",
     name: "DestinationDetails",
+    props: true,
     component: () =>
       import(
         /* webpackChunkName: "DestinationDetails" */ "@/views/DestinationDetails.vue"
@@ -20,7 +22,8 @@ const routes = [
   }
 ];
 
-const router = new VueRouter({
+const router = new VueRouter( {
+  mode: "history",
   routes
 });
 

@@ -15,15 +15,20 @@
 import store from "@/store.js";
 export default {
   data() {
-    return {
-      destinationSlug: this.$route.params.slug
-    };
+    return {};
+  },
+
+  props: {
+    slug: {
+      type: String,
+      require: true
+    }
   },
 
   computed: {
     destination() {
       return store.destinations.find(
-        destination => destination.slug == this.destinationSlug
+        destination => destination.slug == this.slug
       );
     }
   }
