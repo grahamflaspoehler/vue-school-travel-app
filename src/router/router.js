@@ -12,17 +12,28 @@ const routes = [
     component: Home
   },
   {
-    path: "/details/:slug ",
+    path: "/details/:slug",
     name: "DestinationDetails",
     props: true,
     component: () =>
       import(
         /* webpackChunkName: "DestinationDetails" */ "@/views/DestinationDetails.vue"
-      )
+      ),
+    children: [
+      {
+        path: ":experienceSlug",
+        name: "ExperienceDetails",
+        props: true,
+        component: () =>
+          import(
+            /* webpackChunkName: "DestinationDetails" */ "@/views/ExperienceDetails.vue"
+          )
+      }
+    ]
   }
 ];
 
-const router = new VueRouter( {
+const router = new VueRouter({
   mode: "history",
   routes
 });
