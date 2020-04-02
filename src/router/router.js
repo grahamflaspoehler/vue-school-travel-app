@@ -11,7 +11,7 @@ const routes = [
     component: Home
   },
   {
-    path: "/details/:id",
+    path: "/details/:slug",
     name: "DestinationDetails",
     component: () =>
       import(
