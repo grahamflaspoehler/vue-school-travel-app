@@ -44,7 +44,7 @@ export default {
   font-weight: bold;
   text-decoration: none;
   color: #2c3e50;
- }
+}
 
 #nav a.router-link-exact-active {
   color: turquoise;
