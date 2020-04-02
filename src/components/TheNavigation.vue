@@ -37,7 +37,13 @@ export default {
 
 <style scoped>
 #nav {
-  padding: 30px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  border-bottom: 1px solid gray;
+  z-index: 1;
 }
 
 #nav a {
